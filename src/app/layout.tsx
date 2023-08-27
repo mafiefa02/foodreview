@@ -3,8 +3,7 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import NextAuthProvider from '~/context/nextauth-provider';
 import { ThemeProvider } from '~/context/theme-provider';
-
-import TRPCProvider from './_trpc/trpc-provider';
+import TRPCProvider from '~/trpc/trpc-provider';
 
 import type { Metadata } from 'next';
 const inter = Inter({ subsets: ['latin'] });
