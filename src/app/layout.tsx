@@ -1,12 +1,11 @@
 import './globals.css';
 
-import { Inter } from 'next/font/google';
 import NextAuthProvider from '~/context/nextauth-provider';
 import { ThemeProvider } from '~/context/theme-provider';
+import { inter } from '~/fonts/fonts';
 import TRPCProvider from '~/trpc/trpc-provider';
 
 import type { Metadata } from 'next';
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Setara Biru',
