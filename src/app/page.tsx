@@ -2,8 +2,7 @@
 
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { Button } from '~/components/ui/button';
-
-import { trpc } from './_trpc/client';
+import { trpc } from '~/trpc/client';
 
 export default function Home() {
   const session = useSession();
