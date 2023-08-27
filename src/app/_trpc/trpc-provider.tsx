@@ -1,6 +1,7 @@
 'use client';
 
 import { PropsWithChildren, useState } from 'react';
+import { getBaseUrl } from '~/lib/utils';
 import { serializer } from '~/server/serializer';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -15,7 +16,7 @@ export default function TRPCProvider({ children }: PropsWithChildren) {
       transformer: serializer,
       links: [
         httpBatchLink({
-          url: 'http://localhost:3000/api/trpc',
+          url: `${getBaseUrl()}/api/trpc`,
         }),
       ],
     }),
