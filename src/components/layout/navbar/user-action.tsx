@@ -17,6 +17,7 @@ import { Skeleton } from '~/components/ui/skeleton';
 import { cn } from '~/lib/utils';
 
 import { ROLE } from '@prisma/client';
+import { EnterIcon } from '@radix-ui/react-icons';
 
 export default function UserAction() {
   const { status, data: session } = useSession();
@@ -26,7 +27,7 @@ export default function UserAction() {
       return (
         <DropdownMenu>
           <DropdownMenuTrigger
-            className='ml-2 rounded-full'
+            className='ml-1 rounded-full'
             name='avatar'
           >
             <Avatar className='h-7 w-7 md:h-8 md:w-8'>
@@ -78,16 +79,27 @@ export default function UserAction() {
 
     case 'unauthenticated':
       return (
-        <Button
-          onClick={() => signIn()}
-          variant='outline'
-          className='ml-2 border-2'
-        >
-          Sign In
-        </Button>
+        <>
+          <Button
+            onClick={() => signIn()}
+            variant='outline'
+            className='ml-1 hidden border-2 sm:block'
+          >
+            Sign In
+          </Button>
+
+          <Button
+            onClick={() => signIn()}
+            variant='outline'
+            size='icon'
+            className='ml-1 border-2 sm:hidden'
+          >
+            <EnterIcon />
+          </Button>
+        </>
       );
 
     default:
-      return <Skeleton className='ml-2 h-7 w-7 rounded-full md:h-8 md:w-8' />;
+      return <Skeleton className='ml-1 h-7 w-7 rounded-full md:h-8 md:w-8' />;
   }
 }
