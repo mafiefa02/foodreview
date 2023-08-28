@@ -16,7 +16,7 @@ export default function NavbarNavigation({
   return (
     <Button
       className={cn(active && 'font-bold')}
-      variant={'link'}
+      variant={'ghost'}
       asChild
     >
       <Link {...props}>{children}</Link>

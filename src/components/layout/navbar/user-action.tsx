@@ -21,9 +21,15 @@ export default function UserAction() {
     case 'authenticated':
       return (
         <DropdownMenu>
-          <DropdownMenuTrigger className='ml-2 rounded-full'>
-            <Avatar className='h-9 w-9'>
-              <AvatarImage src={session.user.image ?? undefined} />
+          <DropdownMenuTrigger
+            className='ml-2 rounded-full'
+            name='avatar'
+          >
+            <Avatar className='h-8 w-8'>
+              <AvatarImage
+                src={session.user.image ?? undefined}
+                alt={session.user.name}
+              />
               <AvatarFallback>
                 {session.user.name.split(' ')[0][0]}
               </AvatarFallback>
@@ -31,7 +37,7 @@ export default function UserAction() {
           </DropdownMenuTrigger>
           <DropdownMenuContent>
             <DropdownMenuLabel>
-              <p className='max-w-[18ch] overflow-hidden text-ellipsis whitespace-nowrap font-normal'>
+              <p className='max-w-sm overflow-hidden text-ellipsis whitespace-nowrap font-normal'>
                 Logged in as{' '}
                 <span className='block text-sm font-bold'>
                   {session.user.name}
@@ -42,7 +48,7 @@ export default function UserAction() {
             <DropdownMenuGroup>
               <DropdownMenuItem asChild>
                 <Button
-                  className='w-full focus:border-none focus:bg-destructive/90 focus:text-destructive-foreground/90'
+                  className='w-full hover:cursor-pointer hover:border-none focus:border-none focus:bg-destructive/90 focus:text-destructive-foreground/90'
                   variant='destructive'
                   onClick={() => signOut()}
                 >
@@ -66,6 +72,6 @@ export default function UserAction() {
       );
 
     default:
-      return <Skeleton className='ml-2 h-9 w-9 rounded-full' />;
+      return <Skeleton className='ml-2 h-8 w-8 rounded-full' />;
   }
 }
