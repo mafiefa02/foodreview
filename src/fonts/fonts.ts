@@ -1,4 +1,4 @@
-import { Inter, Noto_Serif_TC } from 'next/font/google';
+import { Heebo, Noto_Serif_TC } from 'next/font/google';
 
 export const notoSerif = Noto_Serif_TC({
   subsets: ['latin'],
@@ -7,8 +7,8 @@ export const notoSerif = Noto_Serif_TC({
   variable: '--font-noto-serif-tc',
 });
 
-export const inter = Inter({
+export const heebo = Heebo({
   subsets: ['latin'],
   preload: true,
-  variable: '--font-inter',
+  variable: '--font-heebo',
 });

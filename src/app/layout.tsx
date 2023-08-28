@@ -2,7 +2,7 @@ import './globals.css';
 
 import NextAuthProvider from '~/context/nextauth-provider';
 import { ThemeProvider } from '~/context/theme-provider';
-import { inter } from '~/fonts/fonts';
+import { heebo } from '~/fonts/fonts';
 import TRPCProvider from '~/trpc/trpc-provider';
 
 import type { Metadata } from 'next';
@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={heebo.className}>
         <NextAuthProvider>
           <TRPCProvider>
             <ThemeProvider
