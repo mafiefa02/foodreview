@@ -1,6 +1,6 @@
-import { Inter, Noto_Serif } from 'next/font/google';
+import { Inter, Noto_Serif_TC } from 'next/font/google';
 
-export const notoSerif = Noto_Serif({
+export const notoSerif = Noto_Serif_TC({
   subsets: ['latin'],
   weight: ['200', '300', '400', '500', '600', '700', '900'],
   preload: true,
